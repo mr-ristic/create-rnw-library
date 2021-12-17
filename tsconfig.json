@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "commonjs",
+    "lib": ["es6", "es2015", "dom"],
+    "declaration": true,
+    "rootDir": ".",
+    "outDir": ".",
+    "resolveJsonModule": true,
+    "composite": true,
+    "strict": true,
+    "types": ["node"],
+    "esModuleInterop": true
+  },
+  "files": ["package.json"]
+}

@@ -1,0 +1,60 @@
+{
+  "name": "create-rnw-library",
+  "version": "1.0.0",
+  "description": "CLI which allows creating libraries for web and React Native applications",
+  "main": "./lib/index.js",
+  "bin": {
+    "create-rnw-library": "./lib/index.js"
+  },
+  "type": "commonjs",
+  "scripts": {
+    "start": "ts-node-dev --respawn src/index.ts",
+    "create": "yarn build",
+    "build": "tsc -p .",
+    "refresh": "rm -rf ./node_modules ./yarn.lock && yarn"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mr-ristic/create-rnw-library.git"
+  },
+  "keywords": [
+    "react",
+    "react-native",
+    "preact",
+    "library",
+    "module",
+    "package",
+    "create-react-app",
+    "react-native-web",
+    "cli",
+    "component",
+    "ui-kit",
+    "webpack",
+    "publish",
+    "babel"
+  ],
+  "author": "Marko Ristic <mr@markoristic.net>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mr-ristic/create-rnw-library/issues"
+  },
+  "homepage": "https://github.com/mr-ristic/create-rnw-library#readme",
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "clear": "^0.1.0",
+    "commander": "^8.3.0",
+    "figlet": "^1.5.2",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "@types/clear": "^0.1.2",
+    "@types/figlet": "^1.5.4",
+    "@types/node": "^17.0.0",
+    "eslint-config-prettier": "^8.3.0",
+    "nodemon": "^2.0.15",
+    "prettier": "2.5.1",
+    "ts-node": "^10.4.0",
+    "ts-node-dev": "^1.1.8",
+    "typescript": "^4.5.4"
+  }
+}
