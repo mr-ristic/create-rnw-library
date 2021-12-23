@@ -1,22 +1,14 @@
-import handlebars from "handlebars";
+// @ts-nocheck
 import execa from "execa";
-import fs from "fs";
 import globby from "globby";
 import mkdirp from "make-dir";
 import { oraPromise } from "ora";
 import path from "path";
-// import pEachSeries from "p-each-series";
-import { Opts } from "./types";
+import { LibaryProps } from "./types";
 
 import packageInfo from "../package.json";
 
-const templateBlacklist = new Set([
-  "example/public/favicon.ico",
-  "example/public/.gitignore",
-  ".git",
-]);
-
-const createLibrary = async (info: Opts) => {
+const createLibrary = async (info: LibaryProps) => {
   const { manager, template, name, templatePath, git } = info;
 
   const parts = name.split("/");
@@ -26,13 +18,17 @@ const createLibrary = async (info: Opts) => {
   info.destinationPath = destinationPath;
   await mkdirp(destinationPath);
 
-  const source = path.join(__dirname, "..", "template", template);
+  const source = path.join(__dirname, "..", "templates", template);
 
   const files = await globby(source.replace(/\\/g, "/"), {
     dot: true,
   });
 
   console.log({ files });
+
+  // pEachSeries(files, async (file) => {
+  //   console.log({ file });
+  // });
 
   {
     // const promise = pEachSeries(files, async (file) => {

@@ -8,10 +8,17 @@ export interface Params {
   template: "default" | any;
 }
 
-export interface Opts extends Params {
+export interface LibaryProps extends Params {
   templatePath?: string;
   skipPrompts?: boolean;
   git: boolean;
   shortName?: string;
   destinationPath?: string;
+}
+
+export interface templateOptions {
+  file: string;
+  source: string;
+  destination: string;
+  info: LibaryProps
 }
