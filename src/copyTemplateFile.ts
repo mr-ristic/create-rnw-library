@@ -27,7 +27,6 @@ const copyTemplateFile = async (options: templateOptions) => {
     const content = fs.readFileSync(file);
     fs.writeFileSync(destinationPath, content);
   } else {
-    
     const template = handlebars.compile(fs.readFileSync(file, "utf8"));
     const content = template({
       ...info,

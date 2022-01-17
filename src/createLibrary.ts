@@ -2,9 +2,11 @@
 import execa from "execa";
 import globby from "globby";
 import mkdirp from "make-dir";
-import { oraPromise } from "ora";
 import path from "path";
+import ora from "ora";
+import pEachSeries from "p-each-series";
 import { LibaryProps } from "./types";
+import copyTemplateFile from "./copyTemplateFile";
 
 import packageInfo from "../package.json";
 
@@ -24,24 +26,17 @@ const createLibrary = async (info: LibaryProps) => {
     dot: true,
   });
 
-  console.log({ files });
-
-  // pEachSeries(files, async (file) => {
-  //   console.log({ file });
-  // });
-
   {
-    // const promise = pEachSeries(files, async (file) => {
-    //   return module.exports.copyTemplateFile({
-    //     file,
-    //     source,
-    //     dest,
-    //     info,
-    //   });
-    // });
-    // oraPromise(promise, `Copying ${template} template to ${dest}`);
-    // console.log();
-    // await promise;
+    const promise = pEachSeries(files, async (file) => {
+      return copyTemplateFile({
+        file,
+        source,
+        destination: destinationPath,
+        info,
+      });
+    });
+    ora.promise(promise, `Copying ${template} template to ${destinationPath}`);
+    await promise;
   }
 
   // {

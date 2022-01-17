@@ -48,10 +48,12 @@
     "figlet": "^1.5.2",
     "git-config-path": "^2.0.0",
     "github-username": "^7.0.0",
+    "globby": "^11.0.0",
     "handlebars": "^4.7.7",
-    "ora": "^6.0.1",
+    "p-each-series": "^2.1.0",
     "parse-git-config": "^3.0.0",
-    "path": "^0.12.7"
+    "path": "^0.12.7",
+    "ora": "^4.0.3"
   },
   "devDependencies": {
     "@types/clear": "^0.1.2",
