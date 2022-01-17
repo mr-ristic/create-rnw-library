@@ -1,0 +1,28 @@
+{
+  "extends": "./paths.json",
+  "compilerOptions": {
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "allowJs": true,
+    "esModuleInterop": true,
+    "jsx": "react-native",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "target": "ESNext",
+    "strict": true,
+    "noEmit": false,
+    "declaration": true,
+    "outDir": "web/build/src"
+  },
+  "include": ["typings.d.ts", "**/*.ts", "**/*.tsx", "jest.config.js"],
+  "exclude": [
+    "node_modules",
+    "babel.config.js",
+    "metro.config.js",
+    "jest.config.js",
+    "web",
+    "dist",
+    "example",
+    ".templates"
+  ]
+}

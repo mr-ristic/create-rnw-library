@@ -1,0 +1,51 @@
+{
+  "name": "ui-kit-template",
+  "version": "1.0.0",
+  "main": "src/index.ts",
+  "license": "MIT",
+  "repository": "dragantod/ui-kit-template",
+  "source": "src/index.ts",
+  "engines": {
+    "node": ">=10"
+  },
+  "scripts": {
+    "storybook": "start-storybook -p 7007",
+    "prepare": "yarn build",
+    "build": "webpack",
+    "test": "jest"
+  },
+  "peerDependencies": {
+    "react": "^17.0.0"
+  },
+  "dependencies": {
+    "rn-css": "^1.4.4"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.16.0",
+    "@jest/types": "^27.4.2",
+    "@storybook/react": "^6.4.8",
+    "@testing-library/jest-native": "^4.0.4",
+    "@testing-library/react-native": "^9.0.0",
+    "@types/jest": "^27.0.3",
+    "@types/react": "^17.0.37",
+    "@types/react-native": "^0.66.8",
+    "babel-loader": "8.1.0",
+    "babel-plugin-react-native-web": "^0.17.5",
+    "jest": "^27.4.4",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-native": "^0.66.3",
+    "react-native-web": "^0.17.5",
+    "react-test-renderer": "^17.0.2",
+    "ts-jest": "^27.1.1",
+    "ts-loader": "^9.2.6",
+    "ts-node": "^10.4.0",
+    "typescript": "^4.5.2",
+    "webpack": "^5.64.4",
+    "webpack-cli": "^4.9.1"
+  },
+  "files": [
+    "web",
+    "src"
+  ]
+}

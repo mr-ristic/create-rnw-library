@@ -1,0 +1,4 @@
+{
+  "main": "build/bundle.web.js",
+  "types": "build/src/index.d.ts"
+}
