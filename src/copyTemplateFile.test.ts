@@ -1,13 +1,6 @@
+import rmrf from "rmfr";
+import { fileExists } from "./utilities";
 import copyTemplateFile from "./copyTemplateFile";
-import fs from "fs";
-
-const fileExists = (file: string) => {
-  return new Promise((resolve) => {
-    fs.access(file, fs.constants.F_OK, (err) => {
-      err ? resolve(false) : resolve(true);
-    });
-  });
-};
 
 const info = {
   name: "my-test-library",
@@ -32,6 +25,7 @@ describe("Copy template test", () => {
     const doesExists = await fileExists(`${process.cwd()}/${fileName}`);
 
     expect(doesExists).toBe(true);
+    await rmrf(`${process.cwd()}/my-test-library`);
   });
 
   it("should copy nested template component file to destination", async () => {
@@ -42,12 +36,11 @@ describe("Copy template test", () => {
       info,
     });
 
-    // console.log(`${process.cwd()}/${fileName}`)
-
     const doesExists = await fileExists(
       `${process.cwd()}/my-test-library/${fileName}`
     );
 
     expect(doesExists).toBe(true);
+    await rmrf(`${process.cwd()}/my-test-library`);
   });
 });

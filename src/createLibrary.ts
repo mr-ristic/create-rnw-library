@@ -1,5 +1,4 @@
 // @ts-nocheck
-import execa from "execa";
 import globby from "globby";
 import mkdirp from "make-dir";
 import path from "path";

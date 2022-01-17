@@ -50,10 +50,10 @@
     "github-username": "^7.0.0",
     "globby": "^11.0.0",
     "handlebars": "^4.7.7",
+    "ora": "^4.0.3",
     "p-each-series": "^2.1.0",
     "parse-git-config": "^3.0.0",
-    "path": "^0.12.7",
-    "ora": "^4.0.3"
+    "path": "^0.12.7"
   },
   "devDependencies": {
     "@types/clear": "^0.1.2",
@@ -61,6 +61,7 @@
     "@types/jest": "^27.0.3",
     "@types/node": "^17.0.0",
     "@types/ora": "^3.2.0",
+    "@types/rmfr": "^2.0.1",
     "@typescript-eslint/eslint-plugin": "^5.0.0",
     "@typescript-eslint/parser": "^5.0.0",
     "eslint-config-airbnb-typescript": "^16.1.0",
@@ -68,6 +69,7 @@
     "jest": "^27.4.5",
     "nodemon": "^2.0.15",
     "prettier": "2.5.1",
+    "rmfr": "^2.0.0",
     "ts-jest": "^27.1.2",
     "ts-node": "^10.4.0",
     "ts-node-dev": "^1.1.8",

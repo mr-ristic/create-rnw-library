@@ -1,3 +1,4 @@
+import rmrf from "rmfr";
 import createLibrary from "./createLibrary";
 
 const libOptions = {
@@ -15,5 +16,6 @@ describe("Create library test", () => {
   it("shoulld return proper destination path", async () => {
     const destination = await createLibrary(libOptions);
     expect(destination).toBe(`${process.cwd()}/${libOptions.name}`);
+    await rmrf(destination);
   });
 });
