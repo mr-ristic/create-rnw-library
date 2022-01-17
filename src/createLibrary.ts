@@ -1,4 +1,3 @@
-// @ts-nocheck
 import globby from "globby";
 import mkdirp from "make-dir";
 import path from "path";
@@ -42,26 +41,22 @@ const createLibrary = async (info: LibaryProps) => {
   {
     console.log("Initializing npm dependencies. This can take a while...");
 
-    const rootDirectory = installDependencies({
-      destination: destinationPath,
-      info,
-    });
-    ora.promise(rootDirectory, `Running ${manager} install in root directory`);
-    await rootDirectory;
+    const directories = ["", "example"];
 
-    const exampleDirectory = installDependencies({
-      destination: `${destinationPath}/example`,
-      info,
-    });
-    ora.promise(
-      exampleDirectory,
-      `Running ${manager} install in example directory`
-    );
-    await exampleDirectory;
-
-    // const exampleP = module.exports.initPackageManagerExample({ dest, info });
-    // ora.promise(exampleP, `Running ${manager} install in example directory`);
-    // await exampleP;
+    for (let i = 0; i < directories.length; i++) {
+      let installingDirectory = installDependencies({
+        destination: `${destinationPath}/${directories[i]}`,
+        info,
+      });
+      ora.promise(
+        installingDirectory,
+        `Running ${manager} install in ${directories[i]} directory`.replace(
+          "  ",
+          " root "
+        )
+      );
+      await installingDirectory;
+    }
   }
 
   // if (git) {
@@ -72,38 +67,5 @@ const createLibrary = async (info: LibaryProps) => {
 
   return destinationPath;
 };
-
-// module.exports.initPackageManagerRoot = async (opts) => {
-//   const { dest, info } = opts;
-
-//   const commands = [
-//     {
-//       cmd: info.manager,
-//       args: ["install"],
-//       cwd: dest,
-//     },
-//   ];
-
-//   return pEachSeries(commands, async ({ cmd, args, cwd }) => {
-//     return execa(cmd, args, { cwd });
-//   });
-// };
-
-// module.exports.initPackageManagerExample = async (opts) => {
-//   const { dest, info } = opts;
-//   const example = path.join(dest, "example");
-
-//   const commands = [
-//     {
-//       cmd: info.manager,
-//       args: ["install"],
-//       cwd: example,
-//     },
-//   ];
-
-//   return pEachSeries(commands, async ({ cmd, args, cwd }) => {
-//     return execa(cmd, args, { cwd });
-//   });
-// };
 
 export default createLibrary;
