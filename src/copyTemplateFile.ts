@@ -10,8 +10,8 @@ const templateBlacklist = new Set([
   ".git",
 ]);
 
-const copyTemplate = async (opts: templateOptions) => {
-  const { file, source, destination, info } = opts;
+const copyTemplateFile = async (options: templateOptions) => {
+  const { file, source, destination, info } = options;
 
   const relativePath = path.relative(source, file).replace(/\\/g, "/");
   if (relativePath.startsWith(".git")) {
@@ -40,4 +40,4 @@ const copyTemplate = async (opts: templateOptions) => {
   return relativePath;
 };
 
-export default copyTemplate;
+export default copyTemplateFile;
