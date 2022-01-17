@@ -3,15 +3,11 @@ import installDependencies from "./installDependencies";
 import copyTemplateFile from "./copyTemplateFile";
 import { fileExists } from "./utilities";
 
-beforeEach((): void => {
-  jest.setTimeout(120000);
-});
-
 describe("Install npm dependencies", () => {
   it("should install dependecies for destination provided", async () => {
     jest.setTimeout(100000);
     const info = {
-      name: "my-test-library",
+      name: "my-dependencies",
       author: "mr-ristic",
       description: "this is an auto-generated test module. please ignore.",
       repo: "mr-ristic/my-test-library",
@@ -24,7 +20,7 @@ describe("Install npm dependencies", () => {
     const fileName = await copyTemplateFile({
       file: `${process.cwd()}/package.json`,
       source: `${process.cwd()}`,
-      destination: `${process.cwd()}/${info.manager}`,
+      destination: `${process.cwd()}/${info.name}`,
       info,
     });
 
@@ -33,7 +29,7 @@ describe("Install npm dependencies", () => {
     expect(fileCopied).toBe(true);
 
     await installDependencies({
-      destination: `${process.cwd()}/${info.manager}`,
+      destination: `${process.cwd()}/${info.name}`,
       info,
     });
 

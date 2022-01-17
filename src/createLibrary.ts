@@ -6,6 +6,7 @@ import ora from "ora";
 import pEachSeries from "p-each-series";
 import { LibaryProps } from "./types";
 import copyTemplateFile from "./copyTemplateFile";
+import installDependencies from "./installDependencies";
 
 import packageInfo from "../package.json";
 
@@ -38,19 +39,30 @@ const createLibrary = async (info: LibaryProps) => {
     await promise;
   }
 
-  // {
-  //   console.log();
-  //   console.log("Initializing npm dependencies. This will take a minute.");
-  //   console.log();
+  {
+    console.log("Initializing npm dependencies. This can take a while...");
 
-  //   const rootP = module.exports.initPackageManagerRoot({ dest, info });
-  //   ora.promise(rootP, `Running ${manager} install in root directory`);
-  //   await rootP;
+    const rootDirectory = installDependencies({
+      destination: destinationPath,
+      info,
+    });
+    ora.promise(rootDirectory, `Running ${manager} install in root directory`);
+    await rootDirectory;
 
-  //   const exampleP = module.exports.initPackageManagerExample({ dest, info });
-  //   ora.promise(exampleP, `Running ${manager} install in example directory`);
-  //   await exampleP;
-  // }
+    const exampleDirectory = installDependencies({
+      destination: `${destinationPath}/example`,
+      info,
+    });
+    ora.promise(
+      exampleDirectory,
+      `Running ${manager} install in example directory`
+    );
+    await exampleDirectory;
+
+    // const exampleP = module.exports.initPackageManagerExample({ dest, info });
+    // ora.promise(exampleP, `Running ${manager} install in example directory`);
+    // await exampleP;
+  }
 
   // if (git) {
   //   const promise = module.exports.initGitRepo({ dest });

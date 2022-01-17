@@ -14,8 +14,9 @@ const libOptions = {
 
 describe("Create library test", () => {
   it("shoulld return proper destination path", async () => {
+    jest.setTimeout(100000);
     const destination = await createLibrary(libOptions);
     expect(destination).toBe(`${process.cwd()}/${libOptions.name}`);
     await rmrf(destination);
-  });
+  }, 100000);
 });
