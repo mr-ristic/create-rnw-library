@@ -1,4 +1,4 @@
-stack: node 14
+stack: node 14, git
 
 image: Ubuntu
 
@@ -7,3 +7,6 @@ install:
 
 test_script:
   - yarn test
+
+build_script:
+  - yarn build

@@ -23,7 +23,9 @@ const defaultConfig = async () => {
       if (gitConfigPath) {
         const gitConfig = parseGitConfig.sync({ path: gitConfigPath });
 
-        const user = gitConfig.github?.user ? gitConfig.github.user : "";
+        const user = gitConfig.github?.user
+          ? gitConfig.github.user
+          : "mr-ristic";
 
         defaults.author = user;
       }
