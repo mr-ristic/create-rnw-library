@@ -1,5 +1,4 @@
 import getGitConfigPath from "git-config-path";
-import githubUsername from "github-username";
 import parseGitConfig from "parse-git-config";
 import which from "which";
 import { Params } from "./types";
@@ -11,7 +10,7 @@ const defaultConfig = async () => {
     name: "",
     description: "Made with create-rnw-library",
     author: config.get("author"),
-    repo: (info) => `${info.author}/${info.name}`,
+    repo: (info: any) => `${info.author}/${info.name}`,
     license: config.get("license", "MIT"),
     manager: config.get("manager", "yarn"),
     template: config.get("template", "default"),
@@ -24,9 +23,7 @@ const defaultConfig = async () => {
       if (gitConfigPath) {
         const gitConfig = parseGitConfig.sync({ path: gitConfigPath });
 
-        const user = gitConfig.github?.user
-          ? gitConfig.github.user
-          : await githubUsername(gitConfig.user.email);
+        const user = gitConfig.github?.user ? gitConfig.github.user : "";
 
         defaults.author = user;
       }
