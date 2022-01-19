@@ -6,8 +6,7 @@ import pEachSeries from "p-each-series";
 import { LibaryProps } from "./types";
 import copyTemplateFile from "./copyTemplateFile";
 import installDependencies from "./installDependencies";
-
-import packageInfo from "../package.json";
+import initGitRepo from "./initGitRepo";
 
 const createLibrary = async (info: LibaryProps) => {
   const { manager, template, name, templatePath, git } = info;
@@ -59,11 +58,11 @@ const createLibrary = async (info: LibaryProps) => {
     }
   }
 
-  // if (git) {
-  //   const promise = module.exports.initGitRepo({ dest });
-  //   ora.promise(promise, "Initializing git repo");
-  //   await promise;
-  // }
+  if (git) {
+    const promise = initGitRepo({ destination: destinationPath });
+    ora.promise(promise, "Initializing git repo");
+    await promise;
+  }
 
   return destinationPath;
 };

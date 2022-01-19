@@ -16,9 +16,14 @@ export interface LibaryProps extends Params {
   destinationPath?: string;
 }
 
-export interface templateOptions {
+export interface initGitOptions {
+  destination: string;
+}
+export interface installDependenciesOptions extends initGitOptions {
+  info: LibaryProps;
+}
+
+export interface templateOptions extends installDependenciesOptions {
   file: string;
   source: string;
-  destination: string;
-  info: LibaryProps
 }

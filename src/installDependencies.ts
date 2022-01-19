@@ -1,7 +1,8 @@
 import execa from "execa";
 import pEachSeries from "p-each-series";
+import { installDependenciesOptions } from "./types";
 
-const installDependencies = async (options: any) => {
+const installDependencies = async (options: installDependenciesOptions) => {
   const { destination, info } = options;
 
   const commands = [

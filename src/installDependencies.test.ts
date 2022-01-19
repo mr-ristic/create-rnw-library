@@ -5,7 +5,7 @@ import { fileExists } from "./utilities";
 
 describe("Install npm dependencies", () => {
   it("should install dependecies for destination provided", async () => {
-    jest.setTimeout(100000);
+    jest.setTimeout(120000);
     const info = {
       name: "my-dependencies",
       author: "mr-ristic",
@@ -38,5 +38,5 @@ describe("Install npm dependencies", () => {
     );
     expect(lockExists).toBe(true);
     await rmfr(`${process.cwd()}/${info.name}`);
-  }, 100000);
+  }, 120000);
 });
