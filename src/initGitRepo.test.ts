@@ -5,7 +5,7 @@ import initGitRepo from "./initGitRepo";
 import { fileExists } from "./utilities";
 
 describe("Init repo test", () => {
-  it("should init git in the destination provided", async () => {
+  xit("should init git in the destination provided", async () => {
     jest.setTimeout(30000);
     await mkdirp("git-test");
     fs.writeFileSync("git-test/index.js", `console.log('hello world')`);
