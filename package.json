@@ -10,7 +10,7 @@
   "scripts": {
     "start": "ts-node-dev --respawn src/index.ts",
     "create": "yarn build",
-    "build": "tsc -p .",
+    "build": "tsc -p ./src",
     "refresh": "rm -rf ./node_modules ./yarn.lock && yarn",
     "test": "jest"
   },

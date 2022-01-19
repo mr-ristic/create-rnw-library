@@ -1,5 +1,9 @@
 {
   "compilerOptions": {
+    "target": "ES2020",
+    "module": "commonjs",
+    "lib": ["es6", "es2015", "dom"],
+    "declaration": true,
     "rootDir": ".",
     "outDir": "../lib/",
     "resolveJsonModule": true,

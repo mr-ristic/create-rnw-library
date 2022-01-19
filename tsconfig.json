@@ -5,7 +5,7 @@
     "lib": ["es6", "es2015", "dom"],
     "declaration": true,
     "rootDir": ".",
-    "outDir": ".",
+    "outDir": "./lib",
     "resolveJsonModule": true,
     "composite": true,
     "strict": true,
