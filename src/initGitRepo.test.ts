@@ -4,7 +4,7 @@ import fs from "fs";
 import initGitRepo from "./initGitRepo";
 import { fileExists } from "./utilities";
 
-xdescribe("Init repo test", () => {
+describe("Init repo test", () => {
   xit("should init git in the destination provided", async () => {
     jest.setTimeout(30000);
     await mkdirp("git-test");

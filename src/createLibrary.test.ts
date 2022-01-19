@@ -9,7 +9,7 @@ const libOptions = {
   license: "MIT",
   manager: "yarn",
   template: "default",
-  git: true,
+  git: false,
 };
 
 describe("Create library test", () => {
