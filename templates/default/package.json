@@ -1,12 +1,14 @@
 {
-  "name": "ui-kit-template",
+  "name": "{{name}}",
   "version": "1.0.0",
   "main": "src/index.ts",
-  "license": "MIT",
-  "repository": "dragantod/ui-kit-template",
+  "description": "{{description}}",
+  "author": "{{author}}",
+  "license": "{{license}}",
+  "repository": "{{repo}}",
   "source": "src/index.ts",
   "engines": {
-    "node": ">=10"
+    "node": ">=14"
   },
   "scripts": {
     "storybook": "start-storybook -p 7007",

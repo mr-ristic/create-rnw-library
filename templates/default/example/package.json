@@ -1,5 +1,5 @@
 {
-  "name": "ui-kit-example",
+  "name": "{{name}}-example",
   "homepage": ".",
   "version": "0.0.0",
   "private": true,
@@ -10,16 +10,16 @@
     "eject": "react-scripts eject"
   },
   "dependencies": {
-    "@types/react": "link:../node_modules/@types/react",
+    "@types/react": "{{#if yarn}}link:..{{else}}file:..{{/if}}/node_modules/@types/react",
     "@types/react-dom": "^17.0.11",
-    "react": "link:../node_modules/react",
-    "react-dom": "link:../node_modules/react-dom",
+    "react": "{{#if yarn}}link:..{{else}}file:..{{/if}}/node_modules/react",
+    "react-dom": "{{#if yarn}}link:..{{else}}file:..{{/if}}/node_modules/react-dom",
     "react-scripts": "^4.0.3",
-    "typescript": "link:../node_modules/typescript",
-    "ui-kit": "link:.."
+    "{{name}}": "{{#if yarn}}link:..{{else}}file:..{{/if}}"
   },
   "devDependencies": {
-    "@babel/plugin-syntax-object-rest-spread": "^7.8.3"
+    "@babel/plugin-syntax-object-rest-spread": "^7.8.3",
+    "typescript": "^4.5.2"
   },
   "eslintConfig": {
     "extends": "react-app"

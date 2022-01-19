@@ -1,10 +1,10 @@
 import React from 'react';
-import { Button } from 'ui-kit/web';
+import { Button } from '{{name}}/web';
 
 function App() {
   return (
     <div>
-      <Button />
+      <Button label={'HELLO WORLD'} />
     </div>
   );
 }
