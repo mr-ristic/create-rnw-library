@@ -25,10 +25,10 @@ npm i -g create-rnw-library
 Run the following command in the desired destination:
 
 ```bash
-create-rnw-library;
+create-rnw-library
 ```
 
-Answer to the prompts and your module is ready for you, with the selected template, installed dependencies nad git initiated.
+Answer to the prompts and your module is ready, with the selected template, installed dependencies nad git initiated.
 
 ## Development
 
