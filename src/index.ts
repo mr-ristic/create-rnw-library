@@ -4,9 +4,11 @@ import chalk from "chalk";
 import clear from "clear";
 import figlet from "figlet";
 import { program } from "commander";
+import path from "path";
 import packageInfo from "../package.json";
 import defaultConfig from "./defaultConfig";
 import createLibrary from "./createLibrary";
+import promptParams from "./promptParams";
 
 const cli = async () => {
   clear();
@@ -40,7 +42,7 @@ const cli = async () => {
     .parse(process.argv);
 
   const options = {
-    name: program.name,
+    name: program.name(),
     description: program.desc,
     author: program.author,
     license: program.license,
@@ -65,6 +67,29 @@ const cli = async () => {
     program.help();
     process.exit(1);
   }
+
+  const params = await promptParams(options);
+  const destination = await createLibrary(params);
+
+  console.log(`
+
+  Your module has been created at ${destination}.
+  
+  To get started, in one tab, run:
+  $ ${chalk.blueBright(`cd ${params.shortName} && ${params.manager} start`)}
+  
+  And in another tab, run the example
+  $ ${chalk.blueBright(
+    `cd ${path.join(params.shortName, "example")} && ${params.manager} start`
+  )}
+  `);
+
+  return destination;
 };
 
-cli();
+try {
+  cli();
+} catch (e) {
+  console.log(e);
+  process.exit(1);
+}
