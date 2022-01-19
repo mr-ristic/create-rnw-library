@@ -1,7 +1,6 @@
 # Create React Web or/and Native library
 
 ![AppVeyor](https://img.shields.io/appveyor/build/mr-ristic/create-rnw-library)
-![AppVeyor tests](https://img.shields.io/appveyor/tests/mr-ristic/create-rnw-library)
 ![npm](https://img.shields.io/npm/v/create-rnw-library)
 
 CLI which allows creating libraries for web and React Native applications.
