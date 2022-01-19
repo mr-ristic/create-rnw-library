@@ -3,7 +3,7 @@ version: "1.0.{build}"
 image: Ubuntu
 
 install:
-  - npm install
+  - yarn
 
 test_script:
-  - npm test
+  - yarn test
