@@ -1,0 +1,9 @@
+version: "1.0.{build}"
+
+image: Ubuntu
+
+install:
+  - npm install
+
+test_script:
+  - npm test
