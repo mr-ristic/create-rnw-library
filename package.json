@@ -1,6 +1,6 @@
 {
   "name": "create-rnw-library",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "description": "CLI which allows creating libraries for web and React Native applications",
   "main": "./lib/index.js",
   "bin": {
@@ -55,7 +55,10 @@
     "parse-git-config": "^3.0.0",
     "path": "^0.12.7",
     "inquirer": "^7.1.0",
-    "validate-npm-package-name": "^3.0.0"
+    "validate-npm-package-name": "^3.0.0",
+    "which": "^2.0.2",
+    "make-dir": "^3.0.2",
+    "execa": "^4.0.0"
   },
   "devDependencies": {
     "@types/clear": "^0.1.2",
