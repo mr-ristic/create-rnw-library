@@ -25,7 +25,7 @@ const defaultConfig = async () => {
 
         const user = gitConfig.github?.user
           ? gitConfig.github.user
-          : "mr-ristic";
+          : "";
 
         defaults.author = user;
       }

@@ -76,7 +76,7 @@ const cli = async () => {
   Your module has been created at ${destination}.
   
   To get started, in one tab, run:
-  $ ${chalk.blueBright(`cd ${params.shortName} && ${params.manager} start`)}
+  $ ${chalk.blueBright(`cd ${params.shortName} && ${params.manager} build`)}
   
   And in another tab, run the example
   $ ${chalk.blueBright(
