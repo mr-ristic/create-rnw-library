@@ -70,7 +70,7 @@ const promptParams = async (options: any) => {
       type: "list",
       name: "template",
       message: "Template",
-      choices: ["default"],
+      choices: ["default", "ts-web-microbundle"],
       default: options.template,
     },
   ]);
@@ -78,7 +78,7 @@ const promptParams = async (options: any) => {
   config.set("author", info.author);
   config.set("license", info.license);
   config.set("manager", info.manager);
-  config.set("template", info.template);
+  config.set("template", 'ts-web-microbundle');
 
   return {
     ...info,

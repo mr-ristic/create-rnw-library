@@ -8,15 +8,15 @@ const libOptions = {
   repo: "mr-ristic/my-test-library",
   license: "MIT",
   manager: "yarn",
-  template: "default",
+  template: "ts-web-microbundle",
   git: false,
 };
 
 describe("Create library test", () => {
   it("shoulld return proper destination path", async () => {
-    jest.setTimeout(120000);
+    jest.setTimeout(240000);
     const destination = await createLibrary(libOptions);
     expect(destination).toBe(`${process.cwd()}/${libOptions.name}`);
     await rmrf(destination);
-  }, 120000);
+  }, 240000);
 });

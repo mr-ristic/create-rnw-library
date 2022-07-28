@@ -8,7 +8,7 @@ describe("Prompt params test", () => {
     repo: "mr-ristic/testing-prompts",
     license: "MIT",
     manager: "npm",
-    template: "default",
+    template: "ts-web-microbundle",
     git: true,
     skipPrompts: true,
   };

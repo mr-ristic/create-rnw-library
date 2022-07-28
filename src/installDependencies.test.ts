@@ -13,7 +13,7 @@ describe("Install npm dependencies", () => {
       repo: "mr-ristic/my-test-library",
       license: "MIT",
       manager: "yarn",
-      template: "default",
+      template: "ts-web-microbundle",
       git: true,
     };
 
