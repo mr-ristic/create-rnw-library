@@ -1,6 +1,6 @@
 {
   "name": "create-rnw-library",
-  "version": "1.0.14",
+  "version": "1.0.15",
   "description": "CLI which allows creating libraries for web and React Native applications",
   "main": "./lib/index.js",
   "bin": {
