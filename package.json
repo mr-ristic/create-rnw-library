@@ -8,6 +8,7 @@
   },
   "type": "commonjs",
   "scripts": {
+    "postinstall": "npm run build",
     "start": "ts-node-dev --respawn src/index.ts",
     "create": "yarn build",
     "build": "tsc -p ./src",
